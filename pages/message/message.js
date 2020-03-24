@@ -1,5 +1,6 @@
 // pages/message/message.js
 var util = require('../../utils/util.js')
+const app = getApp()
 
 Page({
   /**
@@ -19,6 +20,14 @@ Page({
     inputMessage: "",
     userInfo: {},
     hearttype: "heart.png"
+  },
+
+  changeParentData: function () {
+    var pages = getCurrentPages();//当前页面栈    
+    if (pages.length > 1) {    
+      var beforePage = pages[pages.length - 2];//获取上一个页面实例对象
+      beforePage.onLoad();//触发父页面中的方法
+    }
   },
 
   /**
@@ -134,6 +143,7 @@ Page({
         }
       })
     },2000)
+    that.changeParentData()
   },
 
   clickheart(){
@@ -169,9 +179,29 @@ Page({
   },
 
   showInput: function() {
-    this.setData({
-      showInput: true
-    })
+    console.log("authorization", app.globalData.authorization)
+    if(app.globalData.authorization === true){
+      this.setData({
+        showInput: true
+      })
+    }
+    else{
+      wx.showModal({
+        title: '提示',
+        content: '您还未登录，请登录后再评论，谢谢~',
+        confirmText: '登录',
+        cancelText: '取消',
+        success(res){
+          if(res.confirm){
+            wx.switchTab({
+              url: "../user/user"
+            })
+          }
+          else if(res.cancel){
+          }
+        }
+      })
+    }
   },
   onHideInput: function() {
     this.setData({
@@ -231,6 +261,18 @@ Page({
           if(res.tapIndex === 0){
             that.deletecomment(curcomment._id)
           }
+          else{
+            wx.showModal({
+              title: '提示',
+              content: '敬请期待该功能~',
+              success(res){
+                if(res.confirm){
+                }
+                else if(res.cancel){
+                }
+              }
+            })
+          }
         },
         fail(res){
           console.log("fail", res)
@@ -241,13 +283,25 @@ Page({
       wx.showActionSheet({
         itemList: ['评论'],
         success(res){
-          console.log("success",res)
+          if(res.tapIndex == 0){
+            wx.showModal({
+              title: '提示',
+              content: '敬请期待该功能~',
+              success(res){
+                if(res.confirm){
+                }
+                else if(res.cancel){
+                }
+              }
+            })
+          }
         },
         fail(res){
           console.log("fail", res)
         }
       })
     }
+    
     
   },
 

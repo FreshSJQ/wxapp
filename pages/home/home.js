@@ -62,6 +62,7 @@ Page({
   },
 
   onLoad: function () {
+    wx.stopPullDownRefresh()
     var that = this
     var temp = []
     setTimeout(function(){
@@ -78,8 +79,12 @@ Page({
       })
       that.setData({
         selfstuarts: temp,
+      })
+      if(that.data.currentIndexnav === 0){
+        that.setData({
         articles: temp
       })
+    }
     }, 3000)
 
     for(var i = 0; i < selfstures.articles.length; i++){
@@ -125,6 +130,11 @@ Page({
           return 0;
         }
       })
+      if(that.data.currentIndexnav === 1){
+          that.setData({
+          articles: that.data.labarts
+        })
+      }
     }, 3000)
     that.data.newsarts = []
     for(var i = 0; i < newsres.articles.length; i++){
@@ -151,30 +161,13 @@ Page({
         return 0;
       }
     })
+    if(that.data.currentIndexnav === 2){
+      that.setData({
+      articles: that.data.newsarts
+    })
+  }
   }, 3000)
 
-  },
-  onShow: function(){
-    var that = this
-    wx.stopPullDownRefresh()
-    if(that.data._id !== ""){
-      console.log("_id", that.data._id)
-      DB.where({
-        _id: that.data._id
-      }).get({
-        success(res){
-          for(var i = 0; i < that.data.articles.length; i++){
-            if(that.data.articles[i]._id == that.data._id){
-              that.data.articles[i].view = res.data[0].view
-              that.data.articles[i].good_num = res.data[0].good_num
-              that.data.articles[i].comment = res.data[0].comment
-              console.log("success refresh", res.data[0])
-              break;
-            }
-          }
-        },
-      })
-    }
   },
   //点击首页导航
   activeNav: function(e){
@@ -198,11 +191,6 @@ Page({
     }
   },
   onPullDownRefresh(){
-    console.log("fdsafsfasfsafdsafsafds")
-    this.onShow()
-    console.log("=================")
-    for(var i = 0; i < this.data.articles.length; i++){
-      console.log(i, " :", this.data.articles[i].view)
-    }
+    this.onLoad()
   }
 })

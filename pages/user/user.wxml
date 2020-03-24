@@ -1,36 +1,98 @@
 <view wx:if="{{isHide}}">
   <view wx:if="{{canIUse}}">
-    <view class='header'>
-      <image src='/static/images/weixin_1.png'></image>
-    </view>
+    <view wx:if="{{!authorpage}}">
+      <view class="userInfo" bindtap="authorizeUser">
+        <image class="img" src="../../images/icons/anonymity.png" mode="scaleToFit"></image>
+        <text class="text">点击登录</text>
+      </view>
+      <view class="hr"></view>
 
-    <view class='content'>
-      <view>申请获取以下权限</view>
-      <text>获得你的公开信息(昵称，头像等)</text>
-    </view>
+      <navigator url="../about/about" class="item">
+        <view class="title">关于EFF自习室</view>
+        <view class="detail2">
+          <text> ></text>
+        </view>
+      </navigator>
 
-    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
-      授权登录
-    </button>
+      <view class="hr"></view>
+
+      <button class="feedback" open-type="feedback">意见反馈</button>
+
+      <view style="font-size: 32rpx; color: #3E91E3; margin: 30rpx">
+      <text>您除了可以通过意见反馈联系管理员外，
+      还可以通过sjq181230@163.com联系管理员哦~</text>
+      </view>
+
+      <view style="font-size: 32rpx; color: #F75000; margin: 30rpx">
+      <text>现在小程序还在努力开发测试中，请您见谅~</text>
+      </view>
+
+      <view >
+        <image src="https://6566-efficient-1301538379.tcb.qcloud.la/images/gifs/working.gif?sign=04c80b8b65b3f894d05f0754686a29c3&t=1585041162" mode="scaleToFit" style="width: 400rpx; height: 264rpx; margin: 30rpx 175rpx"/>
+      </view>
+    </view>
+    <view wx:else>
+      <view class='header'>
+        <image src='../../images/icons/anonymity.png'></image>
+      </view>
+
+      <view class='content'>
+        <view>申请获取以下权限</view>
+        <text>获得你的公开信息(昵称，头像等)</text>
+      </view>
+
+      <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+        授权登录
+      </button>
+    </view>
   </view>
   <view wx:else>请升级微信版本</view>
 </view>
-
 <view wx:else>
-  <view class="userinfo">
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="scaleToFit"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="hr"></view>
-
-  <navigator url="../about/about" class="item">
-    <view class="title">关于EFF自习室</view>
-    <view class="detail2">
-      <text> ></text>
+  <!-- 申请退出登录界面 -->
+  <view wx:if="{{exitpage}}">
+    <view class='header'>
+      <image src="{{userInfo.avatarUrl}}"></image>
     </view>
-  </navigator>
 
-  <view class="hr"></view>
+    <view class='content'>
+      <view>您确定要退出登录吗？</view>
+      <text>如果您不登录，将无法实现文章评论等功能哦~</text>
+    </view>
 
-  <button class="feedback" open-type="feedback">意见反馈</button>
+    <button class='exitconfirmbutton' bindtap="confirmexitUser">退出登录</button>
+    <button class='exitcancelbutton' bindtap="cancleexitUser">取消</button>
+  </view>
+  <view wx:else>
+    <view class="userinfo">
+        <image bindtap="exitUser" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="scaleToFit"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+
+    <view class="hr"></view>
+
+    <navigator url="../about/about" class="item">
+      <view class="title">关于EFF自习室</view>
+      <view class="detail2">
+        <text> ></text>
+      </view>
+    </navigator>
+
+    <view class="hr"></view>
+
+    <button class="feedback" open-type="feedback">意见反馈</button>
+
+    <view style="font-size: 32rpx; color: #3E91E3; margin: 30rpx">
+    <text>您除了可以通过意见反馈联系管理员外，
+    还可以通过sjq181230@163.com联系管理员哦~</text>
+    </view>
+
+    <view style="font-size: 32rpx; color: #F75000; margin: 30rpx">
+    <text>现在小程序还在努力开发测试中，请您见谅~</text>
+    </view>
+
+    <view >
+      <image src="https://6566-efficient-1301538379.tcb.qcloud.la/images/gifs/working.gif?sign=04c80b8b65b3f894d05f0754686a29c3&t=1585041162" mode="scaleToFit" style="width: 400rpx; height: 264rpx; margin: 30rpx 175rpx"/>
+    </view>
+  </view>
 </view>

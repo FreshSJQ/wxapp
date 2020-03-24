@@ -1,4 +1,26 @@
 /* pages/mine/mine.wxss */
+
+.userInfo {
+  height: 128rpx;
+  display: flex;
+  align-items: center;
+  justify-content: left; 
+  margin: 20rpx 0rpx 20rpx 30rpx;
+  width: 700rpx;
+}
+
+.userInfo .img {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 100%;
+}
+
+.userInfo .text {
+  border: solid 2rpx #4FC1E9;
+  background-color: #4FC1E9;
+  border-radius: 10rpx;
+}
+
 .userinfo {
     display:flex;
     background: #ffffff;
@@ -46,6 +68,22 @@
     border-radius: 80rpx;
     margin: 70rpx 50rpx;
     font-size: 35rpx;
+  }
+
+  .exitconfirmbutton {
+    border-radius: 80rpx;
+    margin: 70rpx 50rpx 30rpx 50rpx;
+    font-size: 35rpx;
+    color: white;
+    background-color: red;
+  }
+
+  .exitcancelbutton {
+    border-radius: 80rpx;
+    margin: 30rpx 50rpx 70rpx 50rpx;
+    font-size: 35rpx;
+    color: white;
+    background-color: #09BA07;
   }
   
   /* 用户中心 */
