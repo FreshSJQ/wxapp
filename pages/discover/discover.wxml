@@ -1,0 +1,16 @@
+<view class="task">
+    <navigator url="../discussion/discussion" class="item">
+        <image class="img1" src="../../images/icons/discussion.png"></image>
+        <text class="font">讨论室</text>
+    </navigator>
+
+    <navigator url="../selfstudy/selfstudy" class="item">
+        <image class="img2" src="../../images/icons/self_study.png"></image>
+        <text class="font">自习室</text>
+    </navigator>
+
+    <navigator url="../punch/punch" class="item">
+        <image class="img3" src="../../images/icons/punch.png"></image>
+        <text class="font">打卡室</text>
+    </navigator>
+</view>

@@ -1,0 +1,36 @@
+<view wx:if="{{isHide}}">
+  <view wx:if="{{canIUse}}">
+    <view class='header'>
+      <image src='/static/images/weixin_1.png'></image>
+    </view>
+
+    <view class='content'>
+      <view>申请获取以下权限</view>
+      <text>获得你的公开信息(昵称，头像等)</text>
+    </view>
+
+    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+      授权登录
+    </button>
+  </view>
+  <view wx:else>请升级微信版本</view>
+</view>
+
+<view wx:else>
+  <view class="userinfo">
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="scaleToFit"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="hr"></view>
+
+  <navigator url="../about/about" class="item">
+    <view class="title">关于EFF自习室</view>
+    <view class="detail2">
+      <text> ></text>
+    </view>
+  </navigator>
+
+  <view class="hr"></view>
+
+  <button class="feedback" open-type="feedback">意见反馈</button>
+</view>

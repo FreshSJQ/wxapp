@@ -1,0 +1,11 @@
+<view class="my_title">
+    <view class="logo">
+        <image class="logoimg" src="../../images/icons/logoname.png" mode="scaleToFill"></image>
+    </view>
+
+    <navigator url="../../pages/search/search" class="search_icon">
+        <image class="searchimg" src="../../images/icons/search.png" mode="scaleToFill"></image>
+        <input placeholder="搜索文章, 讨论或人" placeholder-class="search-placeholder"/>
+    </navigator>
+
+</view>

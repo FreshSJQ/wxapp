@@ -1,0 +1,33 @@
+<!--pages/feedback/feedback.wxml-->
+<view class="content">
+    <form bindsubmit="submitform">
+        <view class="opinion">
+            <textarea name="opinion" value="{{content}}"></textarea>
+        </view>
+    </form>
+</view>
+
+<view class="opinion_wrap">
+  <form bindsubmit="formSubmit">
+      <view class="content_wrap">
+          <view class="content">
+              <textarea name="opinion"   value="{{content}}" auto-height placeholder-class="placeholder" placeholder="期待您的反馈，我们将会不断改进(ง •̀_•́)ง" />
+          </view>
+      </view>  
+      <view class="phone">
+          <input name="contact" value="{{contact}}" placeholder-class="placeholder" placeholder="请留下您的手机号或邮箱，方便我们及时回复(可选填)" />
+      </view>
+      <button formType="submit" hover-class="none" loading="{{loading}}">提交</button>
+  </form>
+</view>
+
+
+<button class="item" open-type="feedback">
+  <view class="item_left item">
+    <view class="icon"><image src="../../images/icons/comment.png" style="width:24px;height:24px;"></image></view>
+      <view class="item_title">意见反馈</view>
+    </view>
+  <view class="item_right">
+    <view class="arrow"><image src="../../images/icons/discover.png" style="width:20px;height:20px;"></image></view>
+  </view>
+</button>

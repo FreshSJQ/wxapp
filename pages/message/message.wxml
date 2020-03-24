@@ -1,0 +1,40 @@
+<view class="message">
+    <navigator url="../artdetail/artdetail?url={{url}}" class="nav">
+        <image class="img" src="{{imgsrc}}" mode="scaleToFit"></image>
+        <view class="linktext">
+            <view style="font-size:35rpx;font-weight:bold;">{{name}}</view>
+            <text style="color: blue;font-size:30rpx;">点击跳转至原文~</text>
+        </view>
+    </navigator>
+
+    <view class="clicklike">
+        <text style="color: red;">点击个喜欢呗~</text>
+        <image src="../../images/icons/point_right.png" class="right"></image>
+        <image src="../../images/icons/{{hearttype}}" class="heart" bindtap="clickheart"></image>
+    </view>
+
+
+    
+    <!-- 写留言按钮 -->
+    <text bindtap="showInput" class="buttonmsg">写评论</text>
+    <!-- 输入框及发送按钮 -->
+    <view class="input-section" wx:if="{{showInput}}">
+    <input class='input_input' value="{{inputMessage}}" focus="auto" placeholder="请输入内容" bindinput='bindInputMsg' bindblur="onHideInput" confirm-type="send" bindconfirm="sendTextMsg" />
+    <view style="height:110rpx;width:170rpx;display:flex; align-items: center;justify-content: center;">
+        <view class="send_btn">
+        <text class="send_btn_text" bindtap="sendTextMsg">发送</text>
+        </view>
+    </view>
+    </view>
+
+    <view wx:for="{{comments}}" wx:key="index" wx:for-item="comment" class="comment" bindtap="clickcomment" data-comment="{{comment}}">
+        <image class="img" src="{{comment.userInfo.avatarUrl}}" mode="scaleToFit"></image>
+        <view class="content">
+            <view class="name">
+                <text >{{comment.userInfo.nickName}}</text>
+                <text style="font-size: 25rpx; margin-left: 60rpx;">{{comment.time}}</text>
+            </view>
+            <view class="content">{{comment.content}}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,41 @@
+.contain{
+    margin: 30rpx;
+}
+
+.contain .title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.contain .title .signimg{
+    width: 330rpx;
+    height: 225rpx;
+}
+
+
+.contain .title .version{
+    color: #3E91E3;
+}
+
+
+.about{
+    margin: 30rpx;
+}
+
+.about .headline{
+  font-size: 45rpx;
+  font-weight: bold;
+  color: #1c538a;
+}
+
+.thank{
+  margin: 30rpx;
+}
+
+.thank .img{
+  width: 700rpx;
+}

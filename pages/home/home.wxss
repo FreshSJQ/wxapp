@@ -1,0 +1,124 @@
+
+.title{
+    height: 60rpx;
+}
+
+.articlecontainer{
+    margin: 20rpx 10rpx 20rpx 10rpx;
+}
+
+.articlecontainer .nav{
+    margin: 20rpx 20rpx 20rpx 20rpx;
+    justify-content: center;
+    align-items: center;
+}
+
+.articlecontainer .nav .nav_item{
+    margin-right: 32rpx;
+    margin-left: 32rpx;
+    background-color: #97CBFF;
+    padding: 20rpx 39rpx;
+    font-size: 40rpx;
+    display: inline-block;
+    color: white;
+}
+
+.nav_item.active{
+    border-bottom: 5rpx solid #1c538a;
+}
+
+.articlecontainer .swiper{
+    background-color: #ffffff;
+    width: 700rpx;
+    height: 400rpx;
+    margin: 10rpx 15rpx 10rpx 15rpx;
+}
+
+.articlecontainer .swiper .swiperimg{
+    width: 700rpx;
+}
+
+.articlecontainer .swiper .navname{
+    font-size: 30rpx;
+    text-overflow:ellipsis;
+    z-index: -1;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.articlecontainer .item{
+    height: 200rpx;
+    margin: 40rpx 15rpx 40rpx 15rpx;
+    display: flex;
+    border-bottom: solid 5rpx darkgray;
+}
+
+.articlecontainer .item .img{
+    width: 260rpx;
+    height: 170rpx;
+    margin: 20rpx 20rpx 20rpx 5rpx;
+    border-radius: 10rpx;
+}
+
+.articlecontainer .item .content{
+    width: 430rpx;
+    height: 170rpx;
+    margin: 5rpx 0 20rpx 5rpx;
+}
+
+.articlecontainer .item .content .righticon{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items:center;
+    width: 98rpx;
+    justify-content:flex-end;
+}
+
+.articlecontainer .item .name{
+    font-size:32rpx;
+    font-weight: bold;
+    margin:5px 0;
+    text-overflow:ellipsis;
+    z-index: -1;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.articlecontainer .item .abstract{
+    font-size:24rpx;
+    color: rgb(32, 27, 27);
+    text-overflow:ellipsis;
+    z-index: -1;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.articlecontainer .item .little{
+    margin: 20rpx 0rpx;
+    display: flex;
+}
+
+.articlecontainer .item .little .icon{
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.articlecontainer .item .little .num{
+    margin-right: 10rpx;
+    font-size: 20rpx;
+}
+
+.articlecontainer .item .little .time{
+    margin-right: 30rpx;
+    font-size: 20rpx;
+}

@@ -1,0 +1,43 @@
+
+
+.task{
+    margin: 20rpx;
+    display:  flex;
+    border-bottom: solid 6rpx #66B3FF;
+}
+
+.task .item{
+    margin-left: 71rpx;
+    margin-right: 71rpx;
+    display: block;
+    width: 100rpx;
+    height: 170rpx;
+}
+
+.task .item .img1{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 100%;
+    border: solid 1rpx #FFECF5;
+    background-color: #FFECF5;
+}
+
+.task .item .img2{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 100%;
+    border: solid 1rpx #DFFFDF;
+    background-color: #DFFFDF;
+}
+
+.task .item .img3{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 100%;
+    border: solid 1rpx #FFFFDF;
+    background-color: #FFFFDF;
+}
+
+.task .item .font{
+    font-size: 30rpx;
+}
