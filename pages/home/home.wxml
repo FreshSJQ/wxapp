@@ -5,7 +5,7 @@
 <view class="articlecontainer">
     <swiper class="swiper" autoplay="{{true}}" indicator-dots="{{true}}" indicator-color="darkgray" indicator-active-color="black" circular="{{true}}" interval="3000">
         <view wx:for="{{swiperart}}" wx:key="index" wx:for-item="article">
-            <navigator url="../message/message?_id={{article._id}}">
+            <navigator url="../message/message?_id={{article.id}}">
                 <swiper-item>
                     <image src="{{article.imgsrc}}" class="swiperimg" mode="widthFix"></image>
                     <text class="navname">{{article.name}}</text>

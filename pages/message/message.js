@@ -106,6 +106,7 @@ Page({
           console.log("fail view", res)
         }
       })
+      that.changeParentData()
     }, 2000)
   },
 
@@ -143,7 +144,6 @@ Page({
         }
       })
     },2000)
-    that.changeParentData()
   },
 
   clickheart(){
